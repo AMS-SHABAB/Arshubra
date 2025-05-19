@@ -1,1 +1,115 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ওয়াল পেইন্টিং সার্ভিস</title>
+  <style>
+    body {
+      background-color: #1a1a1a;
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      font-weight: 300;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    img.hero {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: inset 5px 5px 10px #141414, inset -5px -5px 10px #1f1f1f;
+    }
+    .button-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .neo-button {
+      color: #fff;
+      padding: 0.7em 1.7em;
+      font-size: 18px;
+      border-radius: 0.5em;
+      background: #2a2a2a;
+      cursor: pointer;
+      border: 1px solid #2a2a2a;
+      transition: all 0.3s;
+      box-shadow: 6px 6px 12px rgba(20, 20, 20, 0.4), -6px -6px 12px rgba(51, 51, 51, 0.3);
+      text-align: center;
+    }
+    .neo-button:active {
+      color: #ccc;
+      box-shadow: inset 4px 4px 12px #141414, inset -4px -4px 12px #333333;
+    }
+    .page {
+      display: none;
+      margin-top: 30px;
+      padding: 20px;
+      border-radius: 20px;
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      box-shadow: inset 8px 8px 16px #141414, inset -8px -8px 16px #1f1f1f;
+    }
+    .category-button {
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 12px;
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      box-shadow: inset 3px 3px 6px #141414, inset -3px -3px 6px #1f1f1f;
+      cursor: pointer;
+      transition: 0.3s;
+      color: #fff;
+    }
+    .category-button:hover {
+      background-color: #2a2a2a;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="your-wall-painting-image.jpg" alt="Wall Painting" class="hero">
 
+    <div class="button-grid">
+      <div class="neo-button" onclick="showPage('low')">Low Budget</div>
+      <div class="neo-button" onclick="showPage('high')">High Budget</div>
+    </div>
+
+    <div id="low" class="page">
+      <h3>Low Budget পেইজ</h3>
+      <p>আপনি কিসের জন্য সার্ভিস নিতে চান?</p>
+      <div class="category-button" onclick="alert('Low Budget - House')">House</div>
+      <div class="category-button" onclick="alert('Low Budget - Office')">Office</div>
+      <div class="category-button" onclick="alert('Low Budget - Restaurant')">Restaurant</div>
+      <div class="category-button" onclick="alert('Low Budget - Hotel')">Hotel</div>
+      <div class="category-button" onclick="alert('Low Budget - Educational Institute')">Educational Institute</div>
+      <div class="category-button" onclick="alert('Low Budget - Stall')">Stall</div>
+      <div class="category-button" onclick="alert('Low Budget - Club')">Club</div>
+    </div>
+
+    <div id="high" class="page">
+      <h3>High Budget পেইজ</h3>
+      <p>আপনি কিসের জন্য সার্ভিস নিতে চান?</p>
+      <div class="category-button" onclick="alert('High Budget - House')">House</div>
+      <div class="category-button" onclick="alert('High Budget - Office')">Office</div>
+      <div class="category-button" onclick="alert('High Budget - Restaurant')">Restaurant</div>
+      <div class="category-button" onclick="alert('High Budget - Hotel')">Hotel</div>
+      <div class="category-button" onclick="alert('High Budget - Educational Institute')">Educational Institute</div>
+      <div class="category-button" onclick="alert('High Budget - Stall')">Stall</div>
+      <div class="category-button" onclick="alert('High Budget - Club')">Club</div>
+    </div>
+  </div>
+
+  <script>
+    function showPage(budget) {
+      document.querySelectorAll('.page').forEach(page => page.style.display = 'none');
+      document.getElementById(budget).style.display = 'block';
+    }
+  </script>
+</body>
+  </html>
+      
