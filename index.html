@@ -43,10 +43,16 @@
       position: relative;
       z-index: 10;
     }
-    .logo {
-      font-size: 24px;
-      font-weight: 300;
-    }
+ .logo {
+  width: 50px;
+  height: 50px;
+  background-image: url('IMG_20250517_014037 (1).png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px; /* optional, makes it slightly rounded */
+}
+
     .menu {
       width: 30px;
       height: 20px;
@@ -237,7 +243,7 @@
   <div class="alert-desktop">এই ওয়েবসাইটটি শুধুমাত্র মোবাইল বা ট্যাবলেট ডিভাইসের জন্য।</div>
 
   <header>
-    
+    <div class="logo"></div>
     <div class="menu" onclick="toggleMenu(this)">
       <span></span>
       <span></span>
