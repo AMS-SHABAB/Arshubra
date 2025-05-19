@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>নিওমরফিজম সেবা ওয়েবসাইট</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Noto Sans Bengali', sans-serif;
+    }
+    body {
+      background: #1a1a1a;
+      color: #f0f0f0;
+      padding: 16px;
+    }
+    .alert-desktop {
+      display: none;
+    }
+    @media(min-width: 768px) {
+      body {
+        display: none;
+      }
+      .alert-desktop {
+        display: block;
+        padding: 20px;
+        color: #fff;
+        background: #333;
+        text-align: center;
+        font-size: 18px;
+      }
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 10;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: 300;
+    }
+    .menu {
+      width: 30px;
+      height: 20px;
+      position: relative;
+      cursor: pointer;
+      z-index: 11;
+    }
+    .menu span {
+      position: absolute;
+      height: 3px;
+      width: 100%;
+      background: #ccc;
+      transition: 0.3s;
+      border-radius: 10px;
+    }
+    .menu span:nth-child(1) { top: 5px; }
+    .menu span:nth-child(2) { top: 15px; }
+
+    .menu.open span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    .menu.open span:nth-child(2) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    .menu-list {
+      position: absolute;
+      top: 40px;
+      right: 0;
+      background: #1c1c1c;
+      border-radius: 12px;
+      box-shadow: 5px 5px 15px #141414, -5px -5px 15px #1e1e1e;
+      padding: 10px;
+      display: none;
+      animation: fadeIn 0.4s ease-in-out;
+      z-index: 9;
+    }
+    .menu.open + .menu-list {
+      display: block;
+    }
+    .menu-list a {
+      display: block;
+      color: #f0f0f0;
+      text-decoration: none;
+      margin: 5px 0;
+      padding: 6px 10px;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+    .menu-list a:hover {
+      background: #2a2a2a;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero {
+      margin-bottom: 20px;
+    }
+    .hero img {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: inset 5px 5px 15px #141414, inset -5px -5px 15px #1e1e1e;
+    }
+
+    .description {
+      margin: 20px 0 10px;
+      text-align: center;
+    }
+    .description h2 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+    .description p {
+      font-size: 16px;
+      opacity: 0.8;
+    }
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 10px;
+    }
+    .social-icons a {
+      width: 24px;
+      height: 24px;
+      fill: #fff;
+      transition: transform 0.3s ease;
+    }
+    .social-icons a:hover {
+      transform: scale(1.2);
+      fill: #aaa;
+    }
+    .social-icons svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 20px 0;
+    }
+    .service {
+      background: #1a1a1a;
+      border-radius: 16px;
+      padding: 14px;
+      text-align: center;
+      box-shadow: 10px 10px 20px #121212, -10px -10px 20px #1f1f1f;
+      transition: transform 0.3s, box-shadow 0.3s;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+    }
+    .service:hover {
+      transform: scale(1.08);
+      box-shadow: 0px 0px 20px #4f4f4f;
+    }
+
+    .team {
+      margin: 30px 0;
+      text-align: center;
+    }
+    .team-member {
+      margin-bottom: 20px;
+    }
+    .team-member img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+      box-shadow: 5px 5px 10px #121212, -5px -5px 10px #1f1f1f;
+      transition: transform 0.3s ease;
+    }
+    .team-member img:hover {
+      transform: scale(1.1);
+    }
+    .ad-image img {
+      width: 100%;
+      border-radius: 20px;
+      margin: 20px 0;
+      box-shadow: 5px 5px 15px #141414, -5px -5px 15px #1e1e1e;
+    }
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      border-top: 1px solid #333;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 12px;
+      background: #222;
+      color: #f0f0f0;
+      box-shadow: inset 5px 5px 15px #141414, inset -5px -5px 15px #1e1e1e;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="alert-desktop">এই ওয়েবসাইটটি শুধুমাত্র মোবাইল বা ট্যাবলেট ডিভাইসের জন্য।</div>
+
+  <header>
+    <div class="logo">ক্যানভাস</div>
+    <div class="menu" onclick="toggleMenu(this)">
+      <span></span>
+      <span></span>
+    </div>
+    <div class="menu-list">
+      <a href="#">ড্র পোর্টাল</a>
+      <a href="#">আমাদের সম্পর্কে</a>
+      <a href="#">নীতি</a>
+      <a href="#">যোগাযোগ</a>
+      <a href="#">কাস্টমার হেল্প</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <img src="hero-image.jpg" alt="হিরো ইমেজ">
+  </section>
+
+  <section class="description">
+    <h2>আমাদের সেবা</h2>
+    <p>ঘর সাজানোর প্রতিটি ধাপে আমরা নিয়ে এসেছি নতুনত্ব আর শিল্পের ছোঁয়া।</p>
+    <div class="social-icons">
+      <a href="#" title="Facebook">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S293.94 0 262.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H89.09V288h52.19v224h100.2V288z"/></svg>
+      </a>
+      <a href="#" title="WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M380.9 97.1C339-3.9 225.9-28.3 135.5 15.1 44.2 58.5-4.3 157.2 11.6 254.2L0 320l71.4-18.8c23.6 18.2 52.5 31.4 83.4 36.4 108.9 17.4 211.7-63.3 211.7-173.6 0-38.1-11.5-75.3-32.6-106.9zM224 338c-32.7 0-64.4-10.3-90.9-29.5l-6.3-4.5-43.7 11.5 11.6-42.9-4.4-6.6c-18.3-27.1-27.9-59.2-27.9-92.3C62.3 126.7 139.4 50 224 50s161.7 76.7 161.7 161.7S308.6 338 224 338z"/></svg>
+      </a>
+      <a href="#" title="Contact">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M493.4 24.6l-104-24c-11.7-2.7-23.7 3.3-29.1 14.1L320 96H160l-40-81.3c-5.4-10.8-17.3-16.8-29-14.1L18.6 24.6C7.7 27.1 0 37.2 0 48.5v431c0 11.4 7.7 21.5 18.6 23.9l104 24c11.7 2.7 23.7-3.3 29.1-14.1L160 416h160l40 81.3c5.4 10.8 17.3 16.8 29 14.1l104-24c10.9-2.5 18.6-12.6 18.6-23.9v-431c0-11.3-7.7-21.4-18.6-23.9zM160 304v-96h192v96H160z"/></svg>
+      </a>
+      <a href="#" title="YouTube">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M549.7 124.1c-6.3-23.8-24.9-42.4-48.7-48.7C458.4 64 288 64 288 64S117.6 64 74.1 75.4c-23.8 6.3-42.4 24.9-48.7 48.7C13 167.6 13 256 13 256s0 88.4 12.4 131.9c6.3 23.8 24.9 42.4 48.7 48.7C117.6 448 288 448 288 448s170.4 0 213.9-11.4c23.8-6.3 42.4-24.9 48.7-48.7C563 344.4 563 256 563 256s0-88.4-13.3-131.9zM232 338.5v-165L352 256 232 338.5z"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <section class="services">
+    <div class="service">ওয়াল পেইন্ট</div>
+    <div class="service">ওয়াল ক্রাফট</div>
+    <div class="service">ওয়াল রিপেয়ার</div>
+    <div class="service">ইন্টেরিয়র ডিজাইন</div>
+    <div class="service">ফ্লোর আর্ট</div>
+    <div class="service">সিলিং আর্ট ও ক্রাফট</div>
+  </section>
+
+  <section class="team">
+    <div class="team-member">
+      <img src="artist1.jpg" alt="রাহাত হোসেন">
+      <h3>রাহাত হোসেন</h3>
+      <p>ওয়াল আর্টিস্ট</p>
+    </div>
+    <div class="team-member">
+      <img src="artist2.jpg" alt="সাবিহা তাসনিম">
+      <h3>সাবিহা তাসনিম</h3>
+      <p>ইন্টেরিয়র ডিজাইনার</p>
+    </div>
+    <div class="team-member">
+      <img src="artist3.jpg" alt="তামজিদ জামান">
+      <h3>তামজিদ জামান</h3>
+      <p>ক্রাফট এক্সপার্ট</p>
+    </div>
+  </section>
+
+  <div class="ad-image">
+    <img src="ad-image.jpg" alt="বিজ্ঞাপন">
+  </div>
+
+  <footer>
+    <p>© ২০২৫ ক্যানভাস। সকল স্বত্ব সংরক্ষিত।</p>
+  </footer>
+
+  <script>
+    function toggleMenu(menu) {
+      menu.classList.toggle("open");
+      const list = document.querySelector(".menu-list");
+      if (menu.classList.contains("open")) {
+        list.style.display = "block";
+      } else {
+        list.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
