@@ -282,18 +282,38 @@
       padding: 20px 0;
       border-top: 1px solid #333;
     }
-    button {
-      padding: 10px 20px;
-      border: none;
-      border-radius: 12px;
-      background: #222;
-      color: #f0f0f0;
-      box-shadow: inset 5px 5px 15px #141414, inset -5px -5px 15px #1e1e1e;
-      transition: 0.3s;
-    }
-    button:hover {
-      background: #333;
-    }
+    .herobtn {
+  display: inline-block;
+  color: #f0f0f0;
+  background: #222;
+  padding: 0.7em 1.7em;
+  font-size: 18px;
+  border-radius: 0.5em;
+  border: 1px solid #333;
+  cursor: pointer;
+  box-shadow: 
+    6px 6px 12px #111,      /* dark shadow bottom right */
+    -6px -6px 12px #333;    /* light shadow top left */
+  transition: all 0.3s ease;
+  text-decoration: none;
+  user-select: none;
+}
+
+.herobtn:hover {
+  background: #2b2b2b;
+  box-shadow: 
+    8px 8px 16px #0a0a0a, 
+    -8px -8px 16px #444;
+}
+
+.herobtn:active {
+  color: #aaa;
+  background: #1a1a1a;
+  box-shadow: 
+    inset 4px 4px 12px #111, 
+    inset -4px -4px 12px #444;
+}
+
   </style>
 </head>
 <body>
