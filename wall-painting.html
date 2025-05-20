@@ -13,6 +13,52 @@
       padding: 0;
       font-weight: 300;
     }
+    calculator {
+      background: #1a1a1a;
+      border-radius: 20px;
+      box-shadow: 4px 4px 10px #121212, -4px -4px 10px #2e2e2e;
+      padding: 2rem;
+      width: 100%;
+      max-width: 400px;
+    }
+    .field {
+      margin-bottom: 1rem;
+      display: flex;
+      flex-direction: column;
+    }
+    label {
+      margin-bottom: 0.5rem;
+    }
+    input, select {
+      border: 1px solid #333;
+      padding: 10px;
+      border-radius: 10px;
+      background: #2a2a2a;
+      color: white;
+      box-shadow: inset 2px 2px 4px #121212, inset -2px -2px 4px #333333;
+    }
+    select option {
+      background: #2a2a2a;
+      color: white;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 10px;
+      background: #1a1a1a;
+      font-weight: bold;
+      color: white;
+      box-shadow: 4px 4px 10px #121212, -4px -4px 10px #2e2e2e;
+    }
+    .result {
+      margin-top: 1rem;
+      background: #2a2a2a;
+      padding: 1rem;
+      border-radius: 15px;
+      border: 1px solid #333;
+      box-shadow: inset 2px 2px 4px #121212, inset -2px -2px 4px #333333;
+    }
     .container {
       max-width: 800px;
       margin: 0 auto;
@@ -157,8 +203,119 @@
     <div id="high_stall" class="page"><h3>High Budget - Stall</h3><p>এই পেইজে স্টল ডিজাইন ও পেইন্টিং সম্পর্কিত হাই বাজেট সার্ভিস থাকবে।</p></div>
     <div id="high_club" class="page"><h3>High Budget - Club</h3><p>এই পেইজে ক্লাব পেইন্টিং সম্পর্কিত হাই বাজেট সার্ভিস থাকবে।</p></div>
   </div>
+  <div class="calculator">
+    <div class="field">
+      <label>স্টাইল বেছে নিন:</label>
+      <select id="style">
+        <option value="120">কিউবিজম</option>
+        <option value="65">মিনিমালিস্ট</option>
+        <option value="35">লাইন আর্ট</option>
+        <option value="130">জিওমেট্রিক ডিজাইন</option>
+        <option value="120">সাধারণ গ্রাফিতি</option>
+        <option value="150">লোকজ আর্ট</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>কালার প্রোডাক্ট বেছে নিন:</label>
+      <select id="product">
+        <option value="0">কোন প্রোডাক্ট নয়</option>
+        <option value="40">Acrylic - Normal</option>
+        <option value="70">Acrylic - Medium</option>
+        <option value="100">Acrylic - Expensive</option>
+        <option value="70">Enamel - Normal</option>
+        <option value="100">Enamel - Medium</option>
+        <option value="150">Enamel - Expensive</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>উচ্চতা (ফুট):</label>
+      <input type="number" id="height" placeholder="উচ্চতা লিখুন">
+    </div>
+    <div class="field">
+      <label>প্রস্থ (ফুট):</label>
+      <input type="number" id="width" placeholder="প্রস্থ লিখুন">
+    </div>
+    <div class="field">
+      <label>ট্যাক্স প্রযোজ্য?</label>
+      <select id="tax">
+        <option value="0">না</option>
+        <option value="food">শুধু খাবার খরচ</option>
+        <option value="custom">ঠিকানা অনুযায়ী</option>
+      </select>
+    </div>
+    <div class="field" id="locationField" style="display:none;">
+      <label>সার্ভিস লোকেশন:</label>
+      <select id="location">
+        <option value="1400">আনোয়ারা থানা</option>
+        <option value="800">ইপিজেড থানা</option>
+        <option value="600">কোতোয়ালী থানা</option>
+        <option value="600">খুলশী থানা</option>
+        <option value="800">চন্দনাইশ থানা</option>
+        <option value="850">চান্দগাঁও থানা</option>
+        <option value="950">ডবলমুরিং থানা</option>
+        <option value="2200">দক্ষিণ রাঙ্গুনিয়া থানা</option>
+        <option value="2000">পটিয়া থানা</option>
+        <option value="800">পতেঙ্গা থানা</option>
+        <option value="400">পাঁচলাইশ থানা</option>
+        <option value="650">পাহাড়তলী থানা</option>
+        <option value="2200">ফটিকছড়ি থানা</option>
+        <option value="1000">বন্দর থানা</option>
+        <option value="2000">বাঁশখালী থানা</option>
+        <option value="1000">বাকালিয়া থানা</option>
+        <option value="600">বায়েজিদ থানা</option>
+        <option value="2000">বোয়ালখালী থানা</option>
+        <option value="2500">ভূজপুর থানা</option>
+        <option value="3500">মীরসরাই থানা</option>
+        <option value="2500">রাউজান থানা</option>
+        <option value="2500">রাঙ্গুনিয়া থানা</option>
+        <option value="3000">লোহাগাড়া থানা</option>
+        <option value="3000">সন্দ্বীপ থানা</option>
+        <option value="3000">সীতাকুণ্ড থানা</option>
+        <option value="800">হাটহাজারী থানা</option>
+        <option value="500">হালিশহর থানা</option>
+      </select>
+    </div>
+    <button onclick="calculate()">মূল্য হিসাব করুন</button>
+    <div class="result" id="result"></div>
+  </div>
 
   <script>
+    const taxEl = document.getElementById("tax");
+    const locationField = document.getElementById("locationField");
+
+    taxEl.addEventListener("change", () => {
+      locationField.style.display = taxEl.value === "custom" ? "block" : "none";
+    });
+
+    function calculate() {
+      const style = parseFloat(document.getElementById("style").value);
+      const product = parseFloat(document.getElementById("product").value);
+      const height = parseFloat(document.getElementById("height").value);
+      const width = parseFloat(document.getElementById("width").value);
+      const area = height * width;
+      const taxType = document.getElementById("tax").value;
+      let days = Math.ceil(area / 200);
+      let totalTax = 0;
+
+      if (taxType === "custom") {
+        const taxRate = parseFloat(document.getElementById("location").value);
+        totalTax = days * taxRate;
+      } else if (taxType === "food") {
+        totalTax = days * 600;
+      } else {
+        totalTax = 0;
+      }
+
+      const totalPrice = ((style + product) * area) + totalTax;
+
+      document.getElementById("result").innerHTML = `
+        <p><strong>স্টাইল মূল্য:</strong> ${style} টাকা</p>
+        <p><strong>এলাকা:</strong> ${area} স্কয়ার ফিট</p>
+        <p><strong>মোট দিন:</strong> ${days} দিন</p>
+        <p><strong>মোট মূল্য:</strong> ${totalPrice.toFixed(2)} টাকা</p>
+      `;
+    }
+ 
     function showPage(id) {
       document.querySelectorAll('.page').forEach(page => page.style.display = 'none');
       document.getElementById(id).style.display = 'block';
