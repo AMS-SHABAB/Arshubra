@@ -14,12 +14,12 @@
       font-weight: 300;
     }
     calculator {
-      margin: 1.5rem;
+      margin: 2.5rem;
       background: #1a1a1a;
-      border-radius: 20px;
+      border-radius: 30px;
       box-shadow: 4px 4px 10px #121212, -4px -4px 10px #2e2e2e;
-      padding: 2rem;
-      width: 100%;
+      padding: 3rem;
+      width: 90%;
       max-width: 400px;
     }
     .field {
@@ -137,38 +137,7 @@
       <div class="category-button" onclick="showCategory('low_edu')">Educational Institute</div>
       <div class="category-button" onclick="showCategory('low_stall')">Stall</div>
       <div class="category-button" onclick="showCategory('low_club')">Club</div>
-    </div>
-
-    <div id="highCategories" class="page">
-      <h3>High Budget ক্যাটাগরি</h3>
-      <p>আপনি কিসের জন্য সার্ভিস নিতে চান?</p>
-      <div class="category-button" onclick="showCategory('high_house')">House</div>
-      <div class="category-button" onclick="showCategory('high_office')">Office</div>
-      <div class="category-button" onclick="showCategory('high_restaurant')">Restaurant</div>
-      <div class="category-button" onclick="showCategory('high_hotel')">Hotel</div>
-      <div class="category-button" onclick="showCategory('high_edu')">Educational Institute</div>
-      <div class="category-button" onclick="showCategory('high_stall')">Stall</div>
-      <div class="category-button" onclick="showCategory('high_club')">Club</div>
-    </div>
-
-    <!-- Category Pages with Dummy Content -->
-    <div id="low_house" class="page"><h3>Low Budget - House</h3><p>এই পেইজে হাউজ পেইন্টিং সম্পর্কিত লো বাজেট সার্ভিস বিবরণ থাকবে।</p></div>
-    <div id="low_office" class="page"><h3>Low Budget - Office</h3><p>এই পেইজে অফিস পেইন্টিং সম্পর্কিত লো বাজেট সার্ভিস বিবরণ থাকবে।</p></div>
-    <div id="low_restaurant" class="page"><h3>Low Budget - Restaurant</h3><p>এই পেইজে রেস্টুরেন্ট পেইন্টিং সম্পর্কিত লো বাজেট সার্ভিস বিবরণ থাকবে।</p></div>
-    <div id="low_hotel" class="page"><h3>Low Budget - Hotel</h3><p>এই পেইজে হোটেল পেইন্টিং সম্পর্কিত লো বাজেট সার্ভিস বিবরণ থাকবে।</p></div>
-    <div id="low_edu" class="page"><h3>Low Budget - Educational Institute</h3><p>এই পেইজে শিক্ষা প্রতিষ্ঠানের জন্য লো বাজেট পেইন্টিং সার্ভিস বিবরণ থাকবে।</p></div>
-    <div id="low_stall" class="page"><h3>Low Budget - Stall</h3><p>এই পেইজে স্টল ডিজাইন ও পেইন্টিং সম্পর্কিত লো বাজেট সার্ভিস থাকবে।</p></div>
-    <div id="low_club" class="page"><h3>Low Budget - Club</h3><p>এই পেইজে ক্লাব পেইন্টিং সম্পর্কিত লো বাজেট সার্ভিস থাকবে।</p></div>
-
-    <div id="high_house" class="page"><h3>High Budget - House</h3><p>এই পেইজে হাউজ পেইন্টিং সম্পর্কিত হাই বাজেট সার্ভিস বিবরণ থাকবে।</p></div>
-    <div id="high_office" class="page"><h3>High Budget - Office</h3><p>এই পেইজে অফিস পেইন্টিং সম্পর্কিত হাই বাজেট সার্ভিস বিবরণ থাকবে।</p></div>
-    <div id="high_restaurant" class="page"><h3>High Budget - Restaurant</h3><p>এই পেইজে রেস্টুরেন্ট পেইন্টিং সম্পর্কিত হাই বাজেট সার্ভিস বিবরণ থাকবে।</p></div>
-    <div id="high_hotel" class="page"><h3>High Budget - Hotel</h3><p>এই পেইজে হোটেল পেইন্টিং সম্পর্কিত হাই বাজেট সার্ভিস বিবরণ থাকবে।</p></div>
-    <div id="high_edu" class="page"><h3>High Budget - Educational Institute</h3><p>এই পেইজে শিক্ষা প্রতিষ্ঠানের জন্য হাই বাজেট পেইন্টিং সার্ভিস বিবরণ থাকবে।</p></div>
-    <div id="high_stall" class="page"><h3>High Budget - Stall</h3><p>এই পেইজে স্টল ডিজাইন ও পেইন্টিং সম্পর্কিত হাই বাজেট সার্ভিস থাকবে।</p></div>
-    <div id="high_club" class="page"><h3>High Budget - Club</h3><p>এই পেইজে ক্লাব পেইন্টিং সম্পর্কিত হাই বাজেট সার্ভিস থাকবে।</p></div>
-  </div>
-  <div class="calculator">
+    <div class="calculator">
     <div class="field">
       <label>স্টাইল বেছে নিন:</label>
       <select id="style">
@@ -244,6 +213,38 @@
     <div class="result" id="result"></div>
   </div>
 
+    </div>
+
+    <div id="highCategories" class="page">
+      <h3>High Budget ক্যাটাগরি</h3>
+      <p>আপনি কিসের জন্য সার্ভিস নিতে চান?</p>
+      <div class="category-button" onclick="showCategory('high_house')">House</div>
+      <div class="category-button" onclick="showCategory('high_office')">Office</div>
+      <div class="category-button" onclick="showCategory('high_restaurant')">Restaurant</div>
+      <div class="category-button" onclick="showCategory('high_hotel')">Hotel</div>
+      <div class="category-button" onclick="showCategory('high_edu')">Educational Institute</div>
+      <div class="category-button" onclick="showCategory('high_stall')">Stall</div>
+      <div class="category-button" onclick="showCategory('high_club')">Club</div>
+    </div>
+
+    <!-- Category Pages with Dummy Content -->
+    <div id="low_house" class="page"><h3>Low Budget - House</h3><p>এই পেইজে হাউজ পেইন্টিং সম্পর্কিত লো বাজেট সার্ভিস বিবরণ থাকবে।</p></div>
+    <div id="low_office" class="page"><h3>Low Budget - Office</h3><p>এই পেইজে অফিস পেইন্টিং সম্পর্কিত লো বাজেট সার্ভিস বিবরণ থাকবে।</p></div>
+    <div id="low_restaurant" class="page"><h3>Low Budget - Restaurant</h3><p>এই পেইজে রেস্টুরেন্ট পেইন্টিং সম্পর্কিত লো বাজেট সার্ভিস বিবরণ থাকবে।</p></div>
+    <div id="low_hotel" class="page"><h3>Low Budget - Hotel</h3><p>এই পেইজে হোটেল পেইন্টিং সম্পর্কিত লো বাজেট সার্ভিস বিবরণ থাকবে।</p></div>
+    <div id="low_edu" class="page"><h3>Low Budget - Educational Institute</h3><p>এই পেইজে শিক্ষা প্রতিষ্ঠানের জন্য লো বাজেট পেইন্টিং সার্ভিস বিবরণ থাকবে।</p></div>
+    <div id="low_stall" class="page"><h3>Low Budget - Stall</h3><p>এই পেইজে স্টল ডিজাইন ও পেইন্টিং সম্পর্কিত লো বাজেট সার্ভিস থাকবে।</p></div>
+    <div id="low_club" class="page"><h3>Low Budget - Club</h3><p>এই পেইজে ক্লাব পেইন্টিং সম্পর্কিত লো বাজেট সার্ভিস থাকবে।</p></div>
+
+    <div id="high_house" class="page"><h3>High Budget - House</h3><p>এই পেইজে হাউজ পেইন্টিং সম্পর্কিত হাই বাজেট সার্ভিস বিবরণ থাকবে।</p></div>
+    <div id="high_office" class="page"><h3>High Budget - Office</h3><p>এই পেইজে অফিস পেইন্টিং সম্পর্কিত হাই বাজেট সার্ভিস বিবরণ থাকবে।</p></div>
+    <div id="high_restaurant" class="page"><h3>High Budget - Restaurant</h3><p>এই পেইজে রেস্টুরেন্ট পেইন্টিং সম্পর্কিত হাই বাজেট সার্ভিস বিবরণ থাকবে।</p></div>
+    <div id="high_hotel" class="page"><h3>High Budget - Hotel</h3><p>এই পেইজে হোটেল পেইন্টিং সম্পর্কিত হাই বাজেট সার্ভিস বিবরণ থাকবে।</p></div>
+    <div id="high_edu" class="page"><h3>High Budget - Educational Institute</h3><p>এই পেইজে শিক্ষা প্রতিষ্ঠানের জন্য হাই বাজেট পেইন্টিং সার্ভিস বিবরণ থাকবে।</p></div>
+    <div id="high_stall" class="page"><h3>High Budget - Stall</h3><p>এই পেইজে স্টল ডিজাইন ও পেইন্টিং সম্পর্কিত হাই বাজেট সার্ভিস থাকবে।</p></div>
+    <div id="high_club" class="page"><h3>High Budget - Club</h3><p>এই পেইজে ক্লাব পেইন্টিং সম্পর্কিত হাই বাজেট সার্ভিস থাকবে।</p></div>
+  </div>
+  
   <script>
     const taxEl = document.getElementById("tax");
     const locationField = document.getElementById("locationField");
