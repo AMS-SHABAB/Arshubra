@@ -224,28 +224,19 @@
   display: flex;
   justify-content: space-around;
   padding: 2rem 1rem;
-  border-radius: 50px;
-  background: #1a1a1a;
-  box-shadow: 5px 5px 20px #0a0a0a,
-              -5px -5px 20px #2a2a2a;
 }
 
 .team-member {
   text-align: center;
-  padding: 1.5rem;
-  border-radius: 30px;
-  background: #1a1a1a;
-  box-shadow: inset 2px 2px 5px #2a2a2a,
-              inset -2px -2px 5px #0a0a0a,
-              0 0 8px rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  transition: all 0.3s ease;
 }
 
-.team-member:hover {
-  box-shadow: inset 2px 2px 5px #2a2a2a,
-              inset -2px -2px 5px #0a0a0a,
-              0 0 12px rgba(255, 255, 255, 0.1);
+.team-member .img-wrapper {
+  display: inline-block;
+  padding: 10px;
+  border-radius: 50%;
+  background: #1a1a1a;
+  box-shadow: 10px 10px 20px #0d0d0d,
+              -10px -10px 20px #272727;
 }
 
 .team-member img {
@@ -254,7 +245,6 @@
   border-radius: 50%;
   object-fit: cover;
   transition: transform 0.3s;
-  margin-bottom: 1rem;
 }
 
 .team-member img:hover {
@@ -262,18 +252,18 @@
 }
 
 .team-member h3 {
-  color: #fff;
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #e0e0e0;
+  font-weight: 500;
 }
 
 .team-member p {
-  color: #ccc;
-  font-size: 0.9rem;
-  line-height: 1.4;
-  margin: 0;
+  font-size: 0.85rem;
+  color: #aaa;
+  margin-top: 0.3rem;
 }
+
 
 a {
   color: white;
