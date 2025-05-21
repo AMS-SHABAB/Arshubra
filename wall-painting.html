@@ -15,6 +15,31 @@
       padding: 0;
       font-weight: 300;
     }
+    .content-box {
+      max-width: 400px;
+      padding: 25px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.05); /* light transparent */
+      box-shadow:
+        6px 6px 12px rgba(0, 0, 0, 0.1),
+        -6px -6px 12px rgba(255, 255, 255, 0.3),
+        inset 1px 1px 3px rgba(0, 0, 0, 0.05),
+        inset -1px -1px 3px rgba(255, 255, 255, 0.1);
+      color: #333;
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+
+    .content-box h2 {
+      margin-bottom: 10px;
+      font-size: 22px;
+    }
+
+    .content-box p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
  .floating-btn {
       position: fixed;
       bottom: 20px;
@@ -217,6 +242,14 @@
  
   <div class="container">
     <img src="ChatGPT Image May 20, 2025, 09_12_32 PM.png" alt="Wall Painting" class="hero">
+  <div class="content-box">
+    <h2>Step 1: Select Your Budget</h2>
+    <p>
+      প্রথমে আপনার বাজেট অনুযায়ী নিচের একটি অপশন নির্বাচন করুন।<br><br>
+      ● বাজেট সীমিত? তাহলে <strong>লো বাজেট</strong> অপশনটি বেছে নিন।<br>
+      ● বাজেট একটু বেশি? তাহলে <strong>হাই বাজেট</strong> অপশনটি বেছে নিন।
+    </p>
+  </div>
 
     <div class="button-grid">
       <div class="neo-button" onclick="showPage('lowCategories')">Low Budget</div>
@@ -225,7 +258,7 @@
 
     <div id="lowCategories" class="page">
       <h3>Low Budget ক্যাটাগরি</h3>
-      <p>আপনি কিসের জন্য সার্ভিস নিতে চান?</p>
+      <p>আপনি কিসের জন্য সার্ভিস নিতে চান? </p>
       <div class="category-button" onclick="showCategory('low_house')">House</div>
       <div class="category-button" onclick="showCategory('low_office')">Office</div>
       <div class="category-button" onclick="showCategory('low_restaurant')">Restaurant</div>
