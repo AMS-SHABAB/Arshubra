@@ -366,6 +366,47 @@
     function showCategory(id) {
       showPage(id);
     }
+
+
+    const taxEl = document.getElementById("tax");
+    const locationField = document.getElementById("locationField");
+
+    taxEl.addEventListener("change", () => {
+      locationField.style.display = taxEl.value === "custom" ? "block" : "none";
+    });
+
+    function calculate() {
+      const style = parseFloat(document.getElementById("style").value);
+      const product = parseFloat(document.getElementById("product").value);
+      const height = parseFloat(document.getElementById("height").value);
+      const width = parseFloat(document.getElementById("width").value);
+      const area = height * width;
+      const taxType = document.getElementById("tax").value;
+      let days = Math.ceil(area / 200);
+      let totalTax = 0;
+
+      if (taxType === "custom") {
+        const taxRate = parseFloat(document.getElementById("location").value);
+        totalTax = days * taxRate;
+      } else if (taxType === "food") {
+        totalTax = days * 600;
+      } else {
+        totalTax = 0;
+      }
+
+      const stylePrice = style * area;
+      const productPrice = product * area;
+      const totalPrice = stylePrice + productPrice + totalTax;
+
+      document.getElementById("result").innerHTML = `
+        <p><strong>স্টাইল মূল্য:</strong> ${stylePrice.toFixed(2)} টাকা</p>
+        <p><strong>কালার প্রোডাক্ট মূল্য:</strong> ${productPrice.toFixed(2)} টাকা</p>
+        <p><strong>এলাকা:</strong> ${area} স্কয়ার ফিট</p>
+        <p><strong>মোট দিন:</strong> ${days} দিন</p>
+        <p><strong>ট্যাক্স:</strong> ${totalTax.toFixed(2)} টাকা</p>
+        <p><strong>মোট মূল্য:</strong> ${totalPrice.toFixed(2)} টাকা</p>
+      `;
+    }
   </script>
 </body>
 </html>
