@@ -13,6 +13,84 @@
       padding: 0;
       font-weight: 300;
     }
+ .floating-btn {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: #1a1a1a;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow:
+        inset 1px 1px 3px rgba(255, 255, 255, 0.08),
+        inset -1px -1px 3px rgba(0, 0, 0, 0.7),
+        2px 2px 6px rgba(0, 0, 0, 0.6),
+        -2px -2px 6px rgba(255, 255, 255, 0.04);
+      border-radius: 50%;
+      padding: 12px;
+      cursor: pointer;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    .floating-btn i {
+      color: white;
+      font-size: 20px;
+      transition: transform 0.3s;
+    }
+
+    .floating-btn:hover {
+      box-shadow:
+        2px 2px 8px rgba(0, 0, 0, 0.7),
+        -2px -2px 8px rgba(255, 255, 255, 0.1);
+      transform: scale(1.05);
+    }
+
+    .btn-group {
+      position: fixed;
+      bottom: 70px;
+      left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(10px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .btn-group.show {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .btn-group a {
+      text-decoration: none;
+      background: #1a1a1a;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow:
+        inset 1px 1px 3px rgba(255, 255, 255, 0.05),
+        inset -1px -1px 3px rgba(0, 0, 0, 0.6),
+        2px 2px 4px rgba(0, 0, 0, 0.6),
+        -2px -2px 4px rgba(255, 255, 255, 0.04);
+      border-radius: 50%;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-group a i {
+      color: white;
+      font-size: 18px;
+    }
+
+    .btn-group a:hover {
+      transform: scale(1.1);
+      box-shadow:
+        2px 2px 6px rgba(0, 0, 0, 0.7),
+        -2px -2px 6px rgba(255, 255, 255, 0.1);
+    }
     .background-wrapper {
   min-height: 100vh;
   background: #1a1a1a;
@@ -269,7 +347,29 @@
     <div class="result" id="result"></div>
   </div>
   </div>
+  
+<div class="floating-btn" onclick="toggleBtns(this)">
+    <i class="ri-add-line" id="toggleIcon"></i>
+  </div>
+
+  <div class="btn-group" id="btnGroup">
+    <a href="https://wa.me/8801820716529" target="_blank" title="WhatsApp">
+      <i class="ri-whatsapp-line"></i>
+    </a>
+    <a href="tel:01820716529" title="Call">
+      <i class="ri-phone-line"></i>
+    </a>
+  </div>
+
   <script>
+    let isOpen = false;
+    function toggleBtns(el) {
+      const group = document.getElementById("btnGroup");
+      const icon = document.getElementById("toggleIcon");
+      isOpen = !isOpen;
+      group.classList.toggle("show");
+      icon.className = isOpen ? "ri-close-line" : "ri-add-line";
+    }
     const taxEl = document.getElementById("tax");
     const locationField = document.getElementById("locationField");
     const budgetEl = document.getElementById("budget");
