@@ -225,7 +225,83 @@
       <div class="category-button" onclick="showCategory('high_edu')">Educational Institute</div>
       <div class="category-button" onclick="showCategory('high_stall')">Stall</div>
       <div class="category-button" onclick="showCategory('high_club')">Club</div>
-       
+        <div class="high-budget-calculator">
+    <div class="field">
+      <label>স্টাইল বেছে নিন:</label>
+      <select id="style">
+        <option value="180">কিউবিজম</option>
+        <option value="250">ফ্রি স্টাইল আর্ট</option>
+        <option value="438">থ্রিডি আর্ট</option>
+        <option value="150">পপ আর্ট</option>
+        <option value="170">গ্রাফিতি</option>
+        <option value="330">রিয়ালিজম</option>
+        <option value="230">উকিও-ই</option>
+        <option value="230">অ্যাবস্ট্রাক্ট</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>কালার প্রোডাক্ট বেছে নিন:</label>
+      <select id="product">
+        <option value="0">কোন প্রোডাক্ট নয়</option>
+        <option value="40">Acrylic - Normal</option>
+        <option value="70">Acrylic - Medium</option>
+        <option value="100">Acrylic - Expensive</option>
+        <option value="70">Enamel - Normal</option>
+        <option value="100">Enamel - Medium</option>
+        <option value="150">Enamel - Expensive</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>উচ্চতা (ফুট):</label>
+      <input type="number" id="height" placeholder="উচ্চতা লিখুন">
+    </div>
+    <div class="field">
+      <label>প্রস্থ (ফুট):</label>
+      <input type="number" id="width" placeholder="প্রস্থ লিখুন">
+    </div>
+    <div class="field">
+      <label>ট্যাক্স প্রযোজ্য?</label>
+      <select id="tax">
+        <option value="0">না</option>
+        <option value="food">শুধু খাবার খরচ</option>
+        <option value="custom">ঠিকানা অনুযায়ী</option>
+      </select>
+    </div>
+    <div class="field" id="locationField" style="display:none;">
+      <label>সার্ভিস লোকেশন:</label>
+      <select id="location">
+        <option value="1400">আনোয়ারা থানা</option>
+        <option value="800">ইপিজেড থানা</option>
+        <option value="600">কোতোয়ালী থানা</option>
+        <option value="600">খুলশী থানা</option>
+        <option value="800">চন্দনাইশ থানা</option>
+        <option value="850">চান্দগাঁও থানা</option>
+        <option value="950">ডবলমুরিং থানা</option>
+        <option value="2200">দক্ষিণ রাঙ্গুনিয়া থানা</option>
+        <option value="2000">পটিয়া থানা</option>
+        <option value="800">পতেঙ্গা থানা</option>
+        <option value="400">পাঁচলাইশ থানা</option>
+        <option value="650">পাহাড়তলী থানা</option>
+        <option value="2200">ফটিকছড়ি থানা</option>
+        <option value="1000">বন্দর থানা</option>
+        <option value="2000">বাঁশখালী থানা</option>
+        <option value="1000">বাকালিয়া থানা</option>
+        <option value="600">বায়েজিদ থানা</option>
+        <option value="2000">বোয়ালখালী থানা</option>
+        <option value="2500">ভূজপুর থানা</option>
+        <option value="3500">মীরসরাই থানা</option>
+        <option value="2500">রাউজান থানা</option>
+        <option value="2500">রাঙ্গুনিয়া থানা</option>
+        <option value="3000">লোহাগাড়া থানা</option>
+        <option value="3000">সন্দ্বীপ থানা</option>
+        <option value="3000">সীতাকুণ্ড থানা</option>
+        <option value="800">হাটহাজারী থানা</option>
+        <option value="500">হালিশহর থানা</option>
+      </select>
+    </div>
+    <button onclick="calculate()">মূল্য হিসাব করুন</button>
+    <div class="result" id="result"></div>
+  </div>
     </div>
 
     <!-- Category Pages with Dummy Content -->
