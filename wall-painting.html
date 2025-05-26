@@ -15,6 +15,40 @@
       padding: 0;
       font-weight: 300;
     }
+  
+    .container {
+      background: #2a2a2a;
+      padding: 40px;
+      border-radius: 30px;
+      box-shadow: 0 0 10px #000000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .button {
+      background: #2a2a2a;
+      border: none;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 20px;
+      color: #f0f0f0;
+      box-shadow: 0 0 8px #000000;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .button:hover {
+      box-shadow: inset 2px 2px 5px #141414,
+                  inset -2px -2px 5px #3e3e3e;
+    }
+
+    #viewer {
+      margin-top: 30px;
+      width: 400px;
+    }
+
   .content-box {
   max-width: 400px;
   padding: 25px;
@@ -283,8 +317,68 @@
      </div>
 
     <!-- Category Pages with Dummy Content -->
-    <div id="low_house" class="page"><h3>Low Budget - House</h3><p>এই পেইজে হাউজ পেইন্টিং সম্পর্কিত লো বাজেট সার্ভিস বিবরণ থাকবে।</p></div>
-    <div id="low_office" class="page"><h3>Low Budget - Office</h3><p>এই পেইজে অফিস পেইন্টিং সম্পর্কিত লো বাজেট সার্ভিস বিবরণ থাকবে।</p></div>
+    <div id="low_house" class="page"><h3>Low Budget - House</h3><p>এই পেইজে হাউজ পেইন্টিং সম্পর্কিত লো বাজেট সার্ভিস বিবরণ থাকবে।</p><div class="container">
+    <button class="button" onclick="loadPinterest('cubism_nature')">Cubism Nature</button>
+    <button class="button" onclick="loadPinterest('minimalist')">Minimalist</button>
+    <button class="button" onclick="loadPinterest('cubism_animal')">Cubism Animal</button>
+    <button class="button" onclick="loadPinterest('minimalist_hinduism')">Minimalist Hinduism</button>
+
+    <div id="viewer"></div>
+  </div>
+
+  <script async defer src="https://assets.pinterest.com/js/pinit.js"></script>
+  <script>
+    const boards = {
+      cubism_nature: 'https://www.pinterest.com/anapinskywalker/style/',
+      minimalist: 'https://www.pinterest.com/anapinskywalker/minimalist/',
+      cubism_animal: 'https://www.pinterest.com/anapinskywalker/cubism-animal/',
+      minimalist_hinduism: 'https://www.pinterest.com/anapinskywalker/minimalist-hinduism/'
+    };
+
+    function loadPinterest(label) {
+      const viewer = document.getElementById('viewer');
+      viewer.innerHTML = `
+        <a data-pin-do="embedBoard" 
+           data-pin-board-width="400" 
+           data-pin-scale-height="240" 
+           data-pin-scale-width="80" 
+           href="${boards[label]}"></a>
+      `;
+      window.PinUtils.build();
+    }
+  </script>
+</div>
+    <div id="low_office" class="page"><h3>Low Budget - Office</h3><p>এই পেইজে অফিস পেইন্টিং সম্পর্কিত লো বাজেট সার্ভিস বিবরণ থাকবে।</p><div class="container">
+    <button class="button" onclick="loadPinterest('cubism_nature')">Cubism Nature</button>
+    <button class="button" onclick="loadPinterest('minimalist')">Minimalist</button>
+    <button class="button" onclick="loadPinterest('cubism_animal')">Cubism Animal</button>
+    <button class="button" onclick="loadPinterest('minimalist_hinduism')">Minimalist Hinduism</button>
+
+    <div id="viewer"></div>
+  </div>
+
+  <script async defer src="https://assets.pinterest.com/js/pinit.js"></script>
+  <script>
+    const boards = {
+      cubism_nature: 'https://www.pinterest.com/anapinskywalker/style/',
+      minimalist: 'https://www.pinterest.com/anapinskywalker/minimalist/',
+      cubism_animal: 'https://www.pinterest.com/anapinskywalker/cubism-animal/',
+      minimalist_hinduism: 'https://www.pinterest.com/anapinskywalker/minimalist-hinduism/'
+    };
+
+    function loadPinterest(label) {
+      const viewer = document.getElementById('viewer');
+      viewer.innerHTML = `
+        <a data-pin-do="embedBoard" 
+           data-pin-board-width="400" 
+           data-pin-scale-height="240" 
+           data-pin-scale-width="80" 
+           href="${boards[label]}"></a>
+      `;
+      window.PinUtils.build();
+    }
+  </script>
+</div>
     <div id="low_restaurant" class="page"><h3>Low Budget - Restaurant</h3><p>এই পেইজে রেস্টুরেন্ট পেইন্টিং সম্পর্কিত লো বাজেট সার্ভিস বিবরণ থাকবে।</p></div>
     <div id="low_hotel" class="page"><h3>Low Budget - Hotel</h3><p>এই পেইজে হোটেল পেইন্টিং সম্পর্কিত লো বাজেট সার্ভিস বিবরণ থাকবে।</p></div>
     <div id="low_edu" class="page"><h3>Low Budget - Educational Institute</h3><p>এই পেইজে শিক্ষা প্রতিষ্ঠানের জন্য লো বাজেট পেইন্টিং সার্ভিস বিবরণ থাকবে।</p></div>
